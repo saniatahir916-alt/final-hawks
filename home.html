@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hawks — Authentic Chinese Kitchen</title>
+<meta name="description" content="Hawks Chinese Kitchen — bold Sichuan flavour, hand-folded dumplings and fire-tossed woks. Order online or visit us today.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A6%85</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">
+      <svg width="42" height="42" viewBox="0 0 60 60" aria-hidden="true">
+        <defs>
+          <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8c988"/>
+            <stop offset="1" stop-color="#8f6d2f"/>
+          </linearGradient>
+        </defs>
+        <circle cx="30" cy="30" r="28.5" fill="#d81a20" stroke="url(#gg)" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="24" fill="none" stroke="#eab654" stroke-width=".6" opacity=".55"/>
+        <path d="M15 37 L27 15 L34 22 L44 12 L47 22 L38 29 L45 40 L31 36 L23 41 Z" fill="url(#gg)"/>
+        <circle cx="26" cy="24" r="1.6" fill="#d81a20"/>
+      </svg>
+      <span class="brand-word">HAWKS</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="#order">Order</a>
+      <a href="#reviews">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="#order">Order</a>
+  <a href="#reviews">Reviews</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-media">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto"
+      poster="https://images.pexels.com/videos/2620043/free-video-2620043.jpg?auto=compress&cs=tinysrgb&h=1080&fit=crop&w=1920">
+      <source src="https://videos.pexels.com/video-files/2620043/2620043-uhd_2560_1440_25fps.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <span class="hero-eyebrow">Authentic Chinese Kitchen</span>
+        <h1 class="hero-title">HA<em>W</em>KS</h1>
+        <p class="hero-text">Bold Sichuan heat, hand-folded dumplings and fire-tossed woks — Chinese cooking with real bite, made fresh every morning.</p>
+        <div class="hero-cta">
+          <a href="#menu" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> View Menu</a>
+          <a href="#order" class="btn btn-outline"><i class="fa-solid fa-bag-shopping"></i> Order Now</a>
+        </div>
+      </div>
+      <div class="hero-ticket">
+        <div class="hero-mini-photo hmp-1"><img src="https://images.pexels.com/photos/30708204/pexels-photo-30708204.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Kung Pao Chicken"></div>
+        <div class="hero-mini-photo hmp-2"><img src="https://images.pexels.com/photos/32860323/pexels-photo-32860323.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Steamed Dumplings"></div>
+        <img class="ticket-img" src="https://images.pexels.com/photos/7363758/pexels-photo-7363758.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Peking Duck">
+        <span class="ticket-label">Chef's Signature</span>
+        <span class="ticket-dish">Peking Duck</span>
+        <span class="ticket-price">Rs. 2,800</span>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><b>4.9★</b><span>Guest Rating</span></div>
+      <div class="stat"><b>30-Min</b><span>Average Delivery</span></div>
+      <div class="stat"><b>100%</b><span>Fresh, Daily</span></div>
+      <div class="stat"><b>9</b><span>Signature Dishes</span></div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="section menu-section" id="menu">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Taste The Tradition</span>
+      <h2>Our Signature Menu</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#eab654"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Every dish wok-fired to order, from fiery Sichuan classics to Hawks' own Chinese favourites.</p>
+    </div>
+
+    <div class="menu-tabs" id="menuTabs" role="tablist">
+      <button class="menu-tab active" data-cat="all">All</button>
+      <button class="menu-tab" data-cat="starters">Starters</button>
+      <button class="menu-tab" data-cat="soups">Soups</button>
+      <button class="menu-tab" data-cat="mains">Main Course</button>
+      <button class="menu-tab" data-cat="noodles">Noodles &amp; Rice</button>
+      <button class="menu-tab" data-cat="desserts">Desserts</button>
+    </div>
+
+    <div class="menu-grid reveal" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- ============ ORDER ============ -->
+<section class="section section--light order-section" id="order">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hawks Delivery</span>
+      <h2>Order Your Favourite Chinese Food</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Pick your dishes, tell us where to bring them — hot, fresh and on your table in around 30 minutes.</p>
+    </div>
+
+    <div class="order-layout">
+      <div class="reveal">
+        <div class="order-tabs" id="orderTabs">
+          <button class="order-tab active" data-cat="all">All</button>
+          <button class="order-tab" data-cat="starters">Starters</button>
+          <button class="order-tab" data-cat="soups">Soups</button>
+          <button class="order-tab" data-cat="mains">Main Course</button>
+          <button class="order-tab" data-cat="noodles">Noodles &amp; Rice</button>
+          <button class="order-tab" data-cat="desserts">Desserts</button>
+        </div>
+        <div class="order-list" id="orderList"></div>
+      </div>
+
+      <div class="cart-box reveal">
+        <h3>Your Order</h3>
+        <p class="cart-sub">Review your dishes and check out below.</p>
+        <div class="cart-items" id="cartItems">
+          <div class="cart-empty">Your cart is empty — add a dish to get started.</div>
+        </div>
+        <div class="cart-totals" id="cartTotals" style="display:none;">
+          <div class="cart-totals-row"><span>Subtotal</span><span id="cartSubtotal">Rs. 0</span></div>
+          <div class="cart-totals-row"><span>Delivery Fee</span><span id="cartDelivery">Rs. 150</span></div>
+          <div class="cart-totals-row grand"><span>Total</span><span id="cartGrand">Rs. 0</span></div>
+        </div>
+        <button class="btn btn-primary btn-block" id="checkoutBtn" style="margin-top:18px;" disabled>Checkout</button>
+
+        <form class="order-form" id="orderForm">
+          <input type="text" placeholder="Full name" id="ofName" required>
+          <input type="tel" placeholder="Phone number" id="ofPhone" required>
+          <input type="text" placeholder="Delivery address" id="ofAddress" required>
+          <select id="ofArea" required>
+            <option value="" disabled selected>Select delivery area</option>
+            <option>D-Ground / Susan Road</option>
+            <option>Peoples Colony</option>
+            <option>Madina Town</option>
+            <option>Jaranwala Road</option>
+            <option>Other area in Faisalabad</option>
+          </select>
+          <textarea placeholder="Delivery notes (optional)" id="ofNotes"></textarea>
+          <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="delivery-strip reveal">
+      <div class="delivery-item"><i class="fa-solid fa-clock"></i><b>~30 Min</b><span>Average delivery time</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-motorcycle"></i><b>Rs. 150</b><span>Flat delivery fee</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-receipt"></i><b>Rs. 800</b><span>Minimum order value</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-door-open"></i><b>12PM – 12AM</b><span>Open every day</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="section reviews-section" id="reviews">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Guest Stories</span>
+      <h2>Loved By Our Regulars</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#eab654"/></svg>
+    </div>
+
+    <div class="reviews-wrap reveal">
+      <div class="review-track">
+        <div class="review-slides" id="reviewSlides"></div>
+      </div>
+      <div class="review-nav">
+        <button class="review-arrow" id="reviewPrev" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="review-dots" id="reviewDots"></div>
+        <button class="review-arrow" id="reviewNext" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--light" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Visit Or Call</span>
+      <h2>Find Hawks</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+    </div>
+
+    <div class="contact-layout">
+      <div class="reveal">
+        <div class="contact-info-list">
+          <div class="contact-info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <div><b>Address</b><span>D-Ground, Susan Road, Faisalabad, Punjab, Pakistan</span></div>
+          </div>
+          <div class="contact-info-row">
+            <i class="fa-solid fa-phone"></i>
+            <div><b>Phone</b><a href="tel:+923001234567">+92 300 1234567</a></div>
+          </div>
+          <div class="contact-info-row">
+            <i class="fa-solid fa-envelope"></i>
+            <div><b>Email</b><a href="mailto:hello@hawkschinese.pk">hello@hawkschinese.pk</a></div>
+          </div>
+          <div class="contact-info-row">
+            <i class="fa-solid fa-clock"></i>
+            <div><b>Hours</b><span>Every day · 12:00 PM – 12:00 AM</span></div>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="map-embed">
+          <iframe src="https://maps.google.com/maps?q=Faisalabad,Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Hawks location map"></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form-box reveal">
+        <h3>Send Us A Message</h3>
+        <form id="contactForm">
+          <input type="text" placeholder="Your name" id="cfName" required>
+          <input type="email" placeholder="Email address" id="cfEmail" required>
+          <input type="tel" placeholder="Phone (optional)" id="cfPhone">
+          <textarea placeholder="Your message" id="cfMessage" required></textarea>
+          <button type="submit" class="btn btn-dark btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="brand">
+          <svg width="36" height="36" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="28.5" fill="#d81a20" stroke="#eab654" stroke-width="1.2"/>
+            <path d="M15 37 L27 15 L34 22 L44 12 L47 22 L38 29 L45 40 L31 36 L23 41 Z" fill="#eab654"/>
+            <circle cx="26" cy="24" r="1.6" fill="#d81a20"/>
+          </svg>
+          <span class="brand-word">HAWKS</span>
+        </a>
+        <p style="margin-top:14px;">Chinese kitchen, fire-fed since day one. Bold Sichuan flavour and hand-folded dumplings, made fresh in Faisalabad.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="menu.html">Menu</a>
+          <a href="#order">Order Online</a>
+          <a href="#reviews">Reviews</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="tel:+923001234567">+92 300 1234567</a>
+          <a href="mailto:hello@hawkschinese.pk">hello@hawkschinese.pk</a>
+          <a href="#contact">Susan Road, Faisalabad</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Hawks Chinese Kitchen. All rights reserved.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="cart-pill" id="cartPill" aria-label="View your order">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span class="pill-text">Your Order</span>
+  <span class="cart-pill-count" id="cartPillCount">0</span>
+</button>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastMsg">Done</span></div>
+
+<script src="script.js"></script>
+</body>
+</html>

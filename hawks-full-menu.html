@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Menu — Hawks Chinese Kitchen</title>
+<meta name="description" content="Hawks Chinese Kitchen — full menu. Starters, soups, mains, noodles, beverages and desserts. Order online or on WhatsApp.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%A6%85</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================================
+   HAWKS — Chinese Kitchen · Design tokens (matches home page)
+   ============================================================ */
+:root{
+  --black:#d81a20;
+  --char:#b8141a;
+  --char-2:#8f1014;
+  --red:#d81a20;
+  --red-deep:#8f1014;
+  --red-bright:#f2453d;
+  --gold:#eab654;
+  --gold-light:#f8de96;
+  --gold-deep:#ba8a3a;
+  --cream:#fff4e3;
+  --white:#fffdf8;
+  --ink:#5c1015;
+  --muted:#ffdfc3;
+  --muted-dark:#e0a88f;
+  --green:#3aa65c;
+  --green-deep:#1f7a3d;
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Manrope', sans-serif;
+  --font-mono:'Space Mono', monospace;
+
+  --container:1220px;
+  --radius:14px;
+  --shadow-soft:0 20px 50px -20px rgba(0,0,0,.5);
+  --shadow-card:0 14px 34px -16px rgba(0,0,0,.45);
+  --ease:cubic-bezier(.19,1,.22,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--black);
+  color:var(--cream);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;font-weight:600;letter-spacing:-.01em;}
+p{margin:0;}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;}
+.section{padding:110px 0;position:relative;}
+@media (max-width:768px){.section{padding:74px 0;}}
+
+.section-head{max-width:640px;margin-bottom:52px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:block;
+  margin-bottom:14px;
+}
+.section-head h2{
+  font-size:clamp(2.1rem,4.2vw,3.2rem);
+  color:var(--cream);
+  margin-bottom:18px;
+}
+.section--light .section-head h2{color:var(--ink);}
+.section--light .eyebrow{color:var(--red-deep);}
+.section-sub{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:520px;
+}
+.section--light .section-sub{color:#6b5c4c;}
+.section-head.center .section-sub{margin-left:auto;margin-right:auto;}
+
+.swoosh{margin:2px 0 0;display:inline-block;}
+.swoosh path{stroke:var(--gold);}
+.section-head.center .swoosh{display:block;margin:0 auto 0;}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:16px 30px;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.92rem;
+  letter-spacing:.02em;
+  border-radius:999px;
+  border:1.5px solid transparent;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s, color .3s, border-color .3s;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--gold-light),var(--gold) 60%,var(--gold-deep));
+  color:var(--black);
+  box-shadow:0 10px 28px -10px rgba(200,155,74,.55);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 34px -12px rgba(200,155,74,.7);}
+.btn-outline{
+  border-color:rgba(246,236,220,.4);
+  color:var(--cream);
+  background:rgba(246,236,220,.04);
+  backdrop-filter:blur(6px);
+}
+.btn-outline:hover{border-color:var(--gold-light);background:rgba(232,201,136,.1);transform:translateY(-3px);}
+.btn-dark{background:var(--black);color:var(--gold-light);border-color:var(--black);}
+.btn-dark:hover{background:var(--char);transform:translateY(-3px);}
+.btn-whatsapp{background:var(--green);color:#fff;box-shadow:0 10px 26px -10px rgba(31,122,61,.6);}
+.btn-whatsapp:hover{background:var(--green-deep);transform:translateY(-3px);}
+.btn-block{width:100%;}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none !important;}
+
+/* ============ PRELOADER ============ */
+.preloader{
+  position:fixed;inset:0;z-index:999;background:var(--black);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;
+  transition:opacity .6s var(--ease), visibility .6s var(--ease);
+}
+.preloader.is-hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.preloader-logo{width:58px;height:58px;animation:preloaderSpin 1.5s ease-in-out infinite;}
+.preloader-word{font-family:var(--font-display);font-size:1.3rem;letter-spacing:.06em;color:var(--white);}
+.preloader-bar{width:170px;height:2px;background:rgba(246,236,220,.16);border-radius:2px;overflow:hidden;margin-top:4px;}
+.preloader-bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--gold-light),var(--gold));animation:preloaderBar 1.3s var(--ease) forwards;}
+@keyframes preloaderSpin{0%,100%{transform:scale(1) rotate(0deg);opacity:1;}50%{transform:scale(1.18) rotate(180deg);opacity:.65;}}
+@keyframes preloaderBar{to{width:100%;}}
+
+/* ============ NAVBAR ============ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  padding:22px 0;
+  transition:padding .4s var(--ease), background .4s var(--ease), box-shadow .4s var(--ease);
+}
+.navbar.is-scrolled{
+  padding:13px 0;
+  background:rgba(143,16,20,.88);
+  backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:0 10px 30px -18px rgba(0,0,0,.6);
+  border-bottom:1px solid rgba(200,155,74,.14);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-word{font-family:var(--font-display);font-weight:700;font-size:1.32rem;letter-spacing:.03em;color:var(--white);}
+.nav-links{display:flex;align-items:center;gap:34px;}
+.nav-links a{
+  font-size:.87rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;
+  color:var(--muted);position:relative;padding:4px 0;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:var(--gold);
+  transition:width .35s var(--ease);
+}
+.nav-links a:hover,.nav-links a.active{color:var(--cream);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-actions{display:flex;align-items:center;gap:18px;}
+.nav-actions .btn{padding:12px 24px;font-size:.82rem;}
+.hamburger{
+  display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;z-index:210;
+}
+.hamburger span{width:24px;height:2px;background:var(--cream);border-radius:2px;transition:transform .35s var(--ease),opacity .3s;}
+.hamburger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.is-open span:nth-child(2){opacity:0;}
+.hamburger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+.mobile-panel{
+  position:fixed;inset:0;background:rgba(107,10,13,.98);z-index:190;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;
+  opacity:0;pointer-events:none;transition:opacity .4s var(--ease);
+}
+.mobile-panel.is-open{opacity:1;pointer-events:auto;}
+.mobile-panel a{font-family:var(--font-display);font-size:1.9rem;color:var(--cream);}
+.mobile-panel a:hover{color:var(--gold-light);}
+
+@media (max-width:900px){
+  .nav-links{display:none;}
+  .nav-actions .btn{display:none;}
+  .hamburger{display:flex;}
+}
+
+/* ============ MENU HERO (page CTA) ============ */
+.menu-hero{
+  position:relative;
+  min-height:66vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+  padding-top:140px;padding-bottom:56px;
+}
+.menu-hero-media{position:absolute;inset:0;z-index:0;}
+.menu-hero-media img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.menu-hero-media::after{
+  content:'';position:absolute;inset:0;
+  background:
+    linear-gradient(180deg, rgba(107,10,13,.55) 0%, rgba(216,26,32,.4) 32%, rgba(143,16,20,.94) 100%),
+    linear-gradient(100deg, rgba(216,26,32,.35) 0%, rgba(143,16,20,.1) 40%, rgba(234,182,84,.22) 100%);
+}
+.menu-hero-inner{position:relative;z-index:2;width:100%;}
+.menu-hero-eyebrow{
+  font-family:var(--font-mono);font-size:13px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold-light);margin-bottom:16px;display:flex;align-items:center;gap:12px;
+}
+.menu-hero-eyebrow::before{content:'';width:34px;height:1px;background:var(--gold-light);}
+.menu-hero h1{
+  font-size:clamp(3.4rem,9vw,7.2rem);
+  line-height:.92;
+  color:var(--white);
+  font-weight:600;
+  letter-spacing:-.02em;
+  text-shadow:0 10px 50px rgba(0,0,0,.4);
+  max-width:900px;
+}
+.menu-hero h1 em{
+  font-style:italic;font-weight:500;
+  background:linear-gradient(100deg,var(--gold-light),var(--gold) 55%,var(--red-bright));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.menu-hero-text{margin:24px 0 32px;font-size:1.12rem;color:var(--muted);max-width:520px;line-height:1.7;}
+.menu-hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+
+/* ============ CATEGORY QUICK-NAV ============ */
+.cat-nav{
+  position:sticky;top:0;z-index:120;
+  background:rgba(143,16,20,.94);
+  backdrop-filter:blur(12px) saturate(140%);
+  border-bottom:1px solid rgba(232,201,136,.16);
+}
+.cat-nav-inner{
+  display:flex;gap:10px;overflow-x:auto;
+  padding:14px 28px;max-width:var(--container);margin:0 auto;
+  scrollbar-width:none;
+}
+.cat-nav-inner::-webkit-scrollbar{display:none;}
+.cat-chip{
+  flex-shrink:0;background:rgba(246,236,220,.06);border:1px solid rgba(246,236,220,.18);color:var(--muted);
+  padding:9px 18px;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.01em;white-space:nowrap;
+  transition:all .3s;
+}
+.cat-chip.active,.cat-chip:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+
+/* ============ MENU SECTIONS ============ */
+.menu-section{background:var(--black);}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.dish-card{
+  background:var(--char);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-card);
+  border:1px solid rgba(232,201,136,.08);
+  transition:transform .45s var(--ease), box-shadow .45s var(--ease), border-color .45s;
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.dish-card:hover{transform:translateY(-6px);box-shadow:0 26px 50px -18px rgba(0,0,0,.6);border-color:rgba(232,201,136,.3);}
+.dish-media{position:relative;aspect-ratio:4/3;overflow:hidden;}
+.dish-media img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease);}
+.dish-card:hover .dish-media img{transform:scale(1.08);}
+.dish-media::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(107,10,13,.8));}
+.dish-badge{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:rgba(158,27,38,.92);color:var(--white);
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 11px;border-radius:999px;
+}
+.dish-add{
+  position:absolute;bottom:12px;right:12px;z-index:2;
+  width:38px;height:38px;border-radius:50%;
+  background:var(--gold);color:var(--black);border:none;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  box-shadow:0 8px 18px -6px rgba(0,0,0,.5);
+  transition:transform .3s var(--ease), background .3s;
+}
+.dish-add:hover{transform:scale(1.12) rotate(90deg);background:var(--gold-light);}
+.dish-body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column;}
+.dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:8px;}
+.dish-name{font-family:var(--font-display);font-size:1.2rem;color:var(--white);font-weight:600;}
+.dish-price{font-family:var(--font-mono);color:var(--gold-light);font-size:1rem;white-space:nowrap;}
+.dish-desc{color:var(--muted);font-size:.9rem;line-height:1.6;}
+
+@media (max-width:900px){.menu-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.menu-grid{grid-template-columns:1fr;}}
+
+/* ============ MID-PAGE CTA BANNER ============ */
+.cta-banner{
+  position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--char-2),var(--red) 55%,var(--char-2));
+  padding:88px 0;text-align:center;
+}
+.cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 80% at 85% 20%, rgba(232,201,136,.22), transparent 60%);
+  mix-blend-mode:screen;
+}
+.cta-banner-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+.cta-banner .eyebrow{color:var(--gold-light);}
+.cta-banner h2{
+  font-size:clamp(2.4rem,6vw,4.4rem);
+  color:var(--white);line-height:1;margin-bottom:20px;
+  text-shadow:0 10px 40px rgba(0,0,0,.35);
+}
+.cta-banner p{color:var(--muted);font-size:1.08rem;max-width:520px;margin:0 auto 34px;}
+.cta-banner-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+/* ============ ORDER SECTION (bright) ============ */
+.section--light{background:var(--cream);color:var(--ink);}
+.order-section .section-head h2{max-width:680px;}
+.order-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start;}
+
+.order-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+.order-tab{
+  background:#fff;border:1.5px solid rgba(158,27,38,.14);color:#6b5c4c;
+  padding:9px 18px;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.02em;
+  transition:all .3s;
+}
+.order-tab.active{background:var(--red);border-color:var(--red);color:#fff;}
+.order-tab:hover:not(.active){border-color:var(--red);color:var(--red);}
+
+.order-list{display:flex;flex-direction:column;gap:12px;}
+.order-row{
+  display:flex;align-items:center;gap:16px;
+  background:#fff;border-radius:12px;padding:12px;
+  box-shadow:0 10px 26px -16px rgba(60,30,20,.25);
+  border:1px solid rgba(158,27,38,.06);
+}
+.order-row img{width:66px;height:66px;border-radius:9px;object-fit:cover;flex-shrink:0;}
+.order-row-body{flex:1;min-width:0;}
+.order-row-name{font-weight:700;color:var(--ink);font-size:.98rem;}
+.order-row-price{font-family:var(--font-mono);color:var(--red-deep);font-size:.88rem;margin-top:2px;}
+.qty-control{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.qty-btn{
+  width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(158,27,38,.3);
+  background:#fff;color:var(--red);font-weight:800;display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+}
+.qty-btn:hover{background:var(--red);color:#fff;}
+.qty-val{min-width:16px;text-align:center;font-family:var(--font-mono);font-weight:700;color:var(--ink);}
+
+.cart-box{
+  background:var(--black);color:var(--cream);
+  border-radius:16px;padding:28px;
+  position:sticky;top:110px;
+  box-shadow:0 28px 60px -24px rgba(0,0,0,.4);
+}
+.cart-box h3{font-family:var(--font-display);font-size:1.35rem;color:var(--white);margin-bottom:4px;}
+.cart-box .cart-sub{color:var(--muted);font-size:.85rem;margin-bottom:20px;}
+.cart-items{display:flex;flex-direction:column;gap:0;max-height:260px;overflow-y:auto;margin-bottom:6px;}
+.cart-empty{color:var(--muted-dark);font-size:.9rem;padding:18px 0;text-align:center;border:1px dashed rgba(246,236,220,.18);border-radius:10px;}
+.cart-line{
+  display:flex;justify-content:space-between;gap:10px;padding:11px 0;
+  border-bottom:1px dashed rgba(246,236,220,.16);font-size:.9rem;
+}
+.cart-line .cl-name{color:var(--cream);}
+.cart-line .cl-name b{font-family:var(--font-mono);color:var(--gold-light);font-weight:400;margin-right:6px;}
+.cart-line .cl-price{font-family:var(--font-mono);color:var(--gold-light);white-space:nowrap;}
+.cart-totals{margin-top:16px;padding-top:16px;border-top:1px solid rgba(246,236,220,.18);}
+.cart-totals-row{display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted);padding:4px 0;}
+.cart-totals-row.grand{color:var(--white);font-weight:700;font-size:1.1rem;padding-top:10px;font-family:var(--font-mono);}
+.cart-btn-row{display:flex;gap:10px;margin-top:18px;}
+.cart-btn-row .btn{flex:1;padding:14px 16px;font-size:.85rem;}
+
+.order-form{margin-top:22px;display:none;flex-direction:column;gap:12px;}
+.order-form.is-open{display:flex;}
+.order-form input,.order-form textarea,.order-form select{
+  width:100%;background:rgba(246,236,220,.06);border:1.5px solid rgba(246,236,220,.16);
+  border-radius:9px;padding:12px 14px;color:var(--cream);font-family:var(--font-body);font-size:.9rem;
+  transition:border-color .3s;
+}
+.order-form input::placeholder,.order-form textarea::placeholder{color:var(--muted-dark);}
+.order-form input:focus,.order-form textarea:focus,.order-form select:focus{border-color:var(--gold);outline:none;}
+.order-form textarea{resize:vertical;min-height:64px;}
+
+.delivery-strip{
+  margin-top:64px;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(158,27,38,.14);border-radius:14px;overflow:hidden;
+}
+.delivery-item{background:#fff;padding:26px 22px;text-align:center;}
+.delivery-item i{font-size:1.3rem;color:var(--red);margin-bottom:10px;}
+.delivery-item b{display:block;font-family:var(--font-display);font-size:1.15rem;color:var(--ink);margin-bottom:2px;}
+.delivery-item span{font-size:.8rem;color:#8a7c6c;}
+
+@media (max-width:900px){
+  .order-layout{grid-template-columns:1fr;}
+  .cart-box{position:static;}
+  .delivery-strip{grid-template-columns:repeat(2,1fr);}
+}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--black);padding:64px 0 28px;border-top:1px solid rgba(246,236,220,.08);}
+.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:44px;border-bottom:1px solid rgba(246,236,220,.08);}
+.footer-brand{max-width:320px;}
+.footer-brand .brand{margin-bottom:14px;}
+.footer-brand p{color:var(--muted);font-size:.9rem;line-height:1.7;}
+.footer-cols{display:flex;gap:64px;flex-wrap:wrap;}
+.footer-col h5{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.footer-col a{display:block;color:var(--muted);font-size:.9rem;margin-bottom:11px;transition:color .3s;}
+.footer-col a:hover{color:var(--gold-light);}
+.footer-bottom{padding-top:26px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+.footer-bottom p{color:var(--muted-dark);font-size:.82rem;}
+.social-row{display:flex;gap:12px;}
+.social-row a{
+  width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--cream);
+  display:flex;align-items:center;justify-content:center;transition:all .3s;
+}
+.social-row a:hover{background:var(--red);transform:translateY(-3px);}
+.footer-bottom .social-row a{background:rgba(246,236,220,.06);width:36px;height:36px;font-size:.85rem;}
+
+/* ============ FLOATING ACTION BUTTONS ============ */
+.cart-pill{
+  position:fixed;bottom:26px;right:26px;z-index:150;
+  background:var(--gold);color:var(--black);border:none;border-radius:999px;
+  padding:15px 22px;display:flex;align-items:center;gap:10px;font-weight:800;font-size:.9rem;
+  box-shadow:0 16px 34px -12px rgba(0,0,0,.5);
+  transform:scale(0);opacity:0;transition:transform .4s var(--ease),opacity .3s;
+}
+.cart-pill.is-visible{transform:scale(1);opacity:1;}
+.cart-pill.is-pulse{animation:pillpulse .5s var(--ease);}
+@keyframes pillpulse{0%{transform:scale(1);}40%{transform:scale(1.14);}100%{transform:scale(1);}}
+.cart-pill-count{background:var(--black);color:var(--gold-light);border-radius:50%;width:22px;height:22px;font-size:.75rem;display:flex;align-items:center;justify-content:center;}
+
+.whatsapp-float{
+  position:fixed;bottom:26px;left:26px;z-index:150;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--green);color:#fff;border:none;
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  box-shadow:0 16px 34px -12px rgba(31,122,61,.6);
+  transition:transform .35s var(--ease), background .3s;
+}
+.whatsapp-float:hover{background:var(--green-deep);transform:translateY(-3px) scale(1.06);}
+.whatsapp-float::before{
+  content:'';position:absolute;inset:0;border-radius:50%;background:var(--green);
+  animation:wapulse 2.4s ease-out infinite;z-index:-1;
+}
+@keyframes wapulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+
+.back-to-top{
+  position:fixed;bottom:98px;left:26px;z-index:150;
+  width:44px;height:44px;border-radius:50%;background:rgba(246,236,220,.08);backdrop-filter:blur(8px);
+  border:1px solid rgba(246,236,220,.2);color:var(--cream);display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:all .35s var(--ease);
+}
+.back-to-top.is-visible{opacity:1;pointer-events:auto;}
+.back-to-top:hover{background:var(--gold);color:var(--black);border-color:var(--gold);}
+
+.toast{
+  position:fixed;top:26px;left:50%;transform:translate(-50%,-140%);z-index:400;
+  background:var(--black);color:var(--white);border:1px solid rgba(200,155,74,.4);
+  padding:16px 26px;border-radius:12px;font-size:.9rem;font-weight:600;
+  display:flex;align-items:center;gap:12px;box-shadow:0 20px 40px -14px rgba(0,0,0,.6);
+  transition:transform .5s var(--ease);
+}
+.toast.is-visible{transform:translate(-50%,0);}
+.toast i{color:var(--gold-light);}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+
+@media (max-width:640px){
+  .cart-pill span.pill-text{display:none;}
+  .footer-top{flex-direction:column;}
+  .whatsapp-float{width:50px;height:50px;font-size:1.3rem;}
+  .back-to-top{bottom:88px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <svg class="preloader-logo" viewBox="0 0 60 60" aria-hidden="true">
+    <circle cx="30" cy="30" r="28.5" fill="#8f1014" stroke="#eab654" stroke-width="1.4"/>
+    <path d="M15 37 L27 15 L34 22 L44 12 L47 22 L38 29 L45 40 L31 36 L23 41 Z" fill="#eab654"/>
+    <circle cx="26" cy="24" r="1.6" fill="#8f1014"/>
+  </svg>
+  <span class="preloader-word">HAWKS</span>
+  <div class="preloader-bar"><span></span></div>
+</div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <svg width="42" height="42" viewBox="0 0 60 60" aria-hidden="true">
+        <defs>
+          <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8c988"/>
+            <stop offset="1" stop-color="#8f6d2f"/>
+          </linearGradient>
+        </defs>
+        <circle cx="30" cy="30" r="28.5" fill="#d81a20" stroke="url(#gg)" stroke-width="1.4"/>
+        <circle cx="30" cy="30" r="24" fill="none" stroke="#eab654" stroke-width=".6" opacity=".55"/>
+        <path d="M15 37 L27 15 L34 22 L44 12 L47 22 L38 29 L45 40 L31 36 L23 41 Z" fill="url(#gg)"/>
+        <circle cx="26" cy="24" r="1.6" fill="#d81a20"/>
+      </svg>
+      <span class="brand-word">HAWKS</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="active">Menu</a>
+      <a href="#order">Order</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="#order" class="btn btn-primary">Order Now</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="#order">Order</a>
+  <a href="index.html#reviews">Reviews</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- ============ MENU HERO / PAGE CTA ============ -->
+<section class="menu-hero" id="top">
+  <div class="menu-hero-media">
+    <img src="https://images.pexels.com/photos/5779787/pexels-photo-5779787.jpeg?auto=compress&cs=tinysrgb&h=1080&fit=crop&w=1920" alt="Chef grilling over an open flame">
+  </div>
+  <div class="container menu-hero-inner">
+    <span class="menu-hero-eyebrow">The Complete Hawks Menu</span>
+    <h1>THE FULL <em>SPREAD</em></h1>
+    <p class="menu-hero-text">Every starter, soup, wok-fired main, noodle bowl, sip and sweet we serve — hand-picked, fire-fast and ready for delivery in around 30 minutes.</p>
+    <div class="menu-hero-cta">
+      <a href="#order" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Order Now</a>
+      <a href="https://wa.me/923001234567?text=Hi%20Hawks!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY QUICK NAV ============ -->
+<nav class="cat-nav" id="catNav" aria-label="Menu categories">
+  <div class="cat-nav-inner" id="catNavInner">
+    <a href="#cat-starters" class="cat-chip active" data-cat="cat-starters">Starters</a>
+    <a href="#cat-soups" class="cat-chip" data-cat="cat-soups">Soups</a>
+    <a href="#cat-mains" class="cat-chip" data-cat="cat-mains">Main Course</a>
+    <a href="#cat-noodles" class="cat-chip" data-cat="cat-noodles">Noodles &amp; Rice</a>
+    <a href="#cat-beverages" class="cat-chip" data-cat="cat-beverages">Beverages</a>
+    <a href="#cat-desserts" class="cat-chip" data-cat="cat-desserts">Desserts</a>
+  </div>
+</nav>
+
+<!-- ============ STARTERS ============ -->
+<section class="section menu-section" id="cat-starters">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course One</span>
+      <h2>Starters</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#eab654"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Small plates to open the appetite — crisp, fried and fresh from the wok.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="starters"></div>
+  </div>
+</section>
+
+<!-- ============ SOUPS ============ -->
+<section class="section section--light" id="cat-soups">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Two</span>
+      <h2>Soups</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Warming bowls simmered slow, finished fast — the perfect starter on a cold Faisalabad night.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="soups"></div>
+  </div>
+</section>
+
+<!-- ============ MAIN COURSE ============ -->
+<section class="section menu-section" id="cat-mains">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Three</span>
+      <h2>Main Course</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#eab654"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Our wok-fired heart — bold Sichuan heat and Hawks' own Chinese favourites.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="mains"></div>
+  </div>
+</section>
+
+<!-- ============ NOODLES & RICE ============ -->
+<section class="section section--light" id="cat-noodles">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Four</span>
+      <h2>Noodles &amp; Rice</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Wok-tossed to order, never soggy on delivery — the way we've always made it.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="noodles"></div>
+  </div>
+</section>
+
+<!-- ============ BEVERAGES ============ -->
+<section class="section menu-section" id="cat-beverages">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Five</span>
+      <h2>Beverages</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#eab654"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Something cold or something warm — to go alongside the heat.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="beverages"></div>
+  </div>
+</section>
+
+<!-- ============ DESSERTS ============ -->
+<section class="section section--light" id="cat-desserts">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Course Six</span>
+      <h2>Desserts</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+      <p class="section-sub" style="margin-top:16px;">A sweet finish to close out the meal.</p>
+    </div>
+    <div class="menu-grid reveal" data-cat-grid="desserts"></div>
+  </div>
+</section>
+
+<!-- ============ MID-PAGE CTA BANNER ============ -->
+<section class="cta-banner">
+  <div class="container cta-banner-inner reveal">
+    <span class="eyebrow">Hungry Already?</span>
+    <h2>Let's Get Cooking</h2>
+    <p>Order online below or message us directly on WhatsApp — either way, it's hot at your door in about 30 minutes.</p>
+    <div class="cta-banner-btns">
+      <a href="#order" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Order Now</a>
+      <a href="https://wa.me/923001234567?text=Hi%20Hawks!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORDER ============ -->
+<section class="section section--light order-section" id="order">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hawks Delivery</span>
+      <h2>Build Your Order</h2>
+      <svg class="swoosh" viewBox="0 0 160 24" width="140" height="20"><path d="M2 12 Q40 2 80 12 T158 10" stroke="#d81a20" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M150 4 Q158 8 154 16 Q160 12 158 6 Q156 2 150 4Z" fill="#d81a20"/></svg>
+      <p class="section-sub" style="margin-top:16px;">Pick from the full menu, review your cart, then check out or send it straight to WhatsApp.</p>
+    </div>
+
+    <div class="order-layout">
+      <div class="reveal">
+        <div class="order-tabs" id="orderTabs">
+          <button class="order-tab active" data-cat="all">All</button>
+          <button class="order-tab" data-cat="starters">Starters</button>
+          <button class="order-tab" data-cat="soups">Soups</button>
+          <button class="order-tab" data-cat="mains">Main Course</button>
+          <button class="order-tab" data-cat="noodles">Noodles &amp; Rice</button>
+          <button class="order-tab" data-cat="beverages">Beverages</button>
+          <button class="order-tab" data-cat="desserts">Desserts</button>
+        </div>
+        <div class="order-list" id="orderList"></div>
+      </div>
+
+      <div class="cart-box reveal">
+        <h3>Your Order</h3>
+        <p class="cart-sub">Review your dishes and check out below.</p>
+        <div class="cart-items" id="cartItems">
+          <div class="cart-empty">Your cart is empty — add a dish to get started.</div>
+        </div>
+        <div class="cart-totals" id="cartTotals" style="display:none;">
+          <div class="cart-totals-row"><span>Subtotal</span><span id="cartSubtotal">Rs. 0</span></div>
+          <div class="cart-totals-row"><span>Delivery Fee</span><span id="cartDelivery">Rs. 150</span></div>
+          <div class="cart-totals-row grand"><span>Total</span><span id="cartGrand">Rs. 0</span></div>
+        </div>
+        <div class="cart-btn-row">
+          <button class="btn btn-primary" id="checkoutBtn" disabled>Checkout</button>
+          <a class="btn btn-whatsapp" id="waOrderBtn" href="https://wa.me/923001234567" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+
+        <form class="order-form" id="orderForm">
+          <input type="text" placeholder="Full name" id="ofName" required>
+          <input type="tel" placeholder="Phone number" id="ofPhone" required>
+          <input type="text" placeholder="Delivery address" id="ofAddress" required>
+          <select id="ofArea" required>
+            <option value="" disabled selected>Select delivery area</option>
+            <option>D-Ground / Susan Road</option>
+            <option>Peoples Colony</option>
+            <option>Madina Town</option>
+            <option>Jaranwala Road</option>
+            <option>Other area in Faisalabad</option>
+          </select>
+          <textarea placeholder="Delivery notes (optional)" id="ofNotes"></textarea>
+          <button type="submit" class="btn btn-primary btn-block">Place Order</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="delivery-strip reveal">
+      <div class="delivery-item"><i class="fa-solid fa-clock"></i><b>~30 Min</b><span>Average delivery time</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-motorcycle"></i><b>Rs. 150</b><span>Flat delivery fee</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-receipt"></i><b>Rs. 800</b><span>Minimum order value</span></div>
+      <div class="delivery-item"><i class="fa-solid fa-door-open"></i><b>12PM – 12AM</b><span>Open every day</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <svg width="36" height="36" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="28.5" fill="#d81a20" stroke="#eab654" stroke-width="1.2"/>
+            <path d="M15 37 L27 15 L34 22 L44 12 L47 22 L38 29 L45 40 L31 36 L23 41 Z" fill="#eab654"/>
+            <circle cx="26" cy="24" r="1.6" fill="#d81a20"/>
+          </svg>
+          <span class="brand-word">HAWKS</span>
+        </a>
+        <p style="margin-top:14px;">Chinese kitchen, fire-fed since day one. Bold Sichuan flavour and hand-folded dumplings, made fresh in Faisalabad.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="index.html#reviews">Reviews</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <a href="tel:+923001234567">+92 300 1234567</a>
+          <a href="mailto:hello@hawkschinese.pk">hello@hawkschinese.pk</a>
+          <a href="index.html#contact">Susan Road, Faisalabad</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Hawks Chinese Kitchen. All rights reserved.</p>
+      <div class="social-row">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/923001234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button class="cart-pill" id="cartPill" aria-label="View your order">
+  <i class="fa-solid fa-bag-shopping"></i>
+  <span class="pill-text">Your Order</span>
+  <span class="cart-pill-count" id="cartPillCount">0</span>
+</button>
+
+<a class="whatsapp-float" id="waFloat" href="https://wa.me/923001234567?text=Hi%20Hawks!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span id="toastMsg">Done</span></div>
+
+<script>
+/* ================= PRELOADER ================= */
+const preloader = document.getElementById('preloader');
+function hidePreloader(){ preloader.classList.add('is-hidden'); }
+window.addEventListener('load', () => setTimeout(hidePreloader, 450));
+setTimeout(hidePreloader, 2600); // fallback safety net
+
+/* ================= DATA ================= */
+const DISHES = [
+  {id:'d1', cat:'starters', name:'Spring Rolls', desc:'Crispy rolls packed with fresh vegetables, served with sweet chilli dip.', price:450,
+    img:'https://images.pexels.com/photos/35407775/pexels-photo-35407775.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d2', cat:'starters', name:'Steamed Chicken Dumplings', desc:'Hand-folded dumplings steamed in bamboo baskets, soy-vinegar dip.', price:550,
+    img:'https://images.pexels.com/photos/32860323/pexels-photo-32860323.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d3', cat:'starters', name:'Crispy Chilli Chicken', desc:'Double-fried chicken tossed in a sticky chilli-garlic glaze.', price:850,
+    img:'https://images.pexels.com/photos/29631422/pexels-photo-29631422.jpeg?auto=compress&cs=tinysrgb&w=800', badge:'Spicy'},
+  {id:'d4', cat:'soups', name:'Hot & Sour Soup', desc:'Peppery, tangy chicken broth with mushroom, tofu and bamboo shoots.', price:450,
+    img:'https://images.pexels.com/photos/7492246/pexels-photo-7492246.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d5', cat:'soups', name:'Wonton Soup', desc:'Silky chicken dumplings simmered in a light, fragrant broth.', price:480,
+    img:'https://images.pexels.com/photos/1907227/pexels-photo-1907227.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d6', cat:'soups', name:'Chicken Corn Soup', desc:'Comforting, hearty broth with shredded chicken, corn and egg ribbons.', price:420,
+    img:'https://images.pexels.com/photos/7474164/pexels-photo-7474164.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d7', cat:'mains', name:'Kung Pao Chicken', desc:'Wok-tossed chicken, roasted peanuts and dried chilli in a Sichuan glaze.', price:950,
+    img:'https://images.pexels.com/photos/30708204/pexels-photo-30708204.jpeg?auto=compress&cs=tinysrgb&w=800', badge:'Bestseller'},
+  {id:'d8', cat:'mains', name:'Sweet & Sour Chicken', desc:'Crispy chicken tossed with peppers, pineapple and a tangy red glaze.', price:900,
+    img:'https://images.pexels.com/photos/5848495/pexels-photo-5848495.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d9', cat:'mains', name:'Chicken Manchurian', desc:'Pan-fried chicken in a bold garlic-soy gravy — a Hawks favourite.', price:850,
+    img:'https://images.pexels.com/photos/28445828/pexels-photo-28445828.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d10', cat:'mains', name:"Peking Duck (Half)", desc:'Slow-roasted duck, crisp skin, served with pancakes and hoisin.', price:2800,
+    img:'https://images.pexels.com/photos/7363758/pexels-photo-7363758.jpeg?auto=compress&cs=tinysrgb&w=800', badge:"Chef's Signature"},
+  {id:'d11', cat:'noodles', name:'Chicken Chow Mein', desc:'Stir-fried noodles, chicken and crunchy vegetables in a smoky wok glaze.', price:650,
+    img:'https://images.pexels.com/photos/4223915/pexels-photo-4223915.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d12', cat:'noodles', name:'Yangchow Fried Rice', desc:'Wok-fired rice with chicken, egg, prawns and spring onion.', price:650,
+    img:'https://images.pexels.com/photos/36388451/pexels-photo-36388451.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d13', cat:'noodles', name:'Egg Fried Rice', desc:'Classic wok-fired rice with egg ribbons, spring onion and light soy.', price:500,
+    img:'https://images.pexels.com/photos/19792090/pexels-photo-19792090.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'b1', cat:'beverages', name:'Fresh Lemon Iced Tea', desc:'Chilled black tea with lemon slices and mint — bright and refreshing.', price:280,
+    img:'https://images.pexels.com/photos/316891/pexels-photo-316891.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'b2', cat:'beverages', name:'Classic Iced Tea', desc:'Cold-brewed tea served tall over ice with a striped straw.', price:250,
+    img:'https://images.pexels.com/photos/1484678/pexels-photo-1484678.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'b3', cat:'beverages', name:'Jasmine Green Tea', desc:'Light, floral green tea leaves, steeped fresh to order.', price:220,
+    img:'https://images.pexels.com/photos/4390014/pexels-photo-4390014.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d14', cat:'desserts', name:'Chocolate Lava Cake', desc:'Warm molten chocolate cake with a gooey centre, vanilla ice cream on the side.', price:500,
+    img:'https://images.pexels.com/photos/33803906/pexels-photo-33803906.jpeg?auto=compress&cs=tinysrgb&w=800'},
+  {id:'d15', cat:'desserts', name:'Vanilla Ice Cream', desc:'Two scoops of creamy vanilla, served chilled — the simple way to finish.', price:350,
+    img:'https://images.pexels.com/photos/14573733/pexels-photo-14573733.jpeg?auto=compress&cs=tinysrgb&w=800'},
+];
+const CATS = ['starters','soups','mains','noodles','beverages','desserts'];
+
+/* ================= HELPERS ================= */
+const fmt = n => 'Rs. ' + n.toLocaleString('en-PK');
+let cart = {};
+
+/* ================= NAVBAR ================= */
+const navbar = document.getElementById('navbar');
+const hamburger = document.getElementById('hamburger');
+const mobilePanel = document.getElementById('mobilePanel');
+
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+  document.getElementById('backToTop').classList.toggle('is-visible', window.scrollY > 700);
+}, {passive:true});
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('is-open');
+  mobilePanel.classList.toggle('is-open');
+});
+mobilePanel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  hamburger.classList.remove('is-open'); mobilePanel.classList.remove('is-open');
+}));
+
+document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ================= REVEAL ON SCROLL ================= */
+document.querySelectorAll('.reveal').forEach(el => {
+  const io = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+  }, {threshold:.12});
+  io.observe(el);
+});
+
+/* ================= TOAST ================= */
+function showToast(msg){
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('is-visible');
+  clearTimeout(showToast._tid);
+  showToast._tid = setTimeout(()=>t.classList.remove('is-visible'), 3200);
+}
+
+/* ================= DISH CARD MARKUP ================= */
+function dishCard(d){
+  return `<div class="dish-card" data-cat="${d.cat}">
+    <div class="dish-media">
+      <img src="${d.img}" alt="${d.name}" loading="lazy">
+      ${d.badge ? `<span class="dish-badge">${d.badge}</span>` : ''}
+      <button class="dish-add" data-id="${d.id}" aria-label="Add ${d.name} to order"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="dish-body">
+      <div class="dish-top"><span class="dish-name">${d.name}</span><span class="dish-price">${fmt(d.price)}</span></div>
+      <p class="dish-desc">${d.desc}</p>
+    </div>
+  </div>`;
+}
+
+/* ================= RENDER EACH CATEGORY SECTION ================= */
+document.querySelectorAll('[data-cat-grid]').forEach(grid => {
+  const cat = grid.dataset.catGrid;
+  const list = DISHES.filter(d => d.cat === cat);
+  grid.innerHTML = list.map(dishCard).join('');
+  grid.querySelectorAll('.dish-add').forEach(btn => btn.addEventListener('click', () => addToCart(btn.dataset.id, true)));
+});
+
+/* ================= CATEGORY QUICK NAV: SCROLLSPY ================= */
+const catChips = document.querySelectorAll('.cat-chip');
+const catSections = CATS.map(c => document.getElementById('cat-' + c));
+window.addEventListener('scroll', () => {
+  let current = catSections[0].id;
+  catSections.forEach(sec => { if (sec && window.scrollY >= sec.offsetTop - 140) current = sec.id; });
+  catChips.forEach(chip => chip.classList.toggle('active', chip.dataset.cat === current));
+}, {passive:true});
+
+/* ================= ORDER PICKER ================= */
+function orderRow(d){
+  const qty = cart[d.id] || 0;
+  return `<div class="order-row" data-cat="${d.cat}" data-id="${d.id}">
+    <img src="${d.img}" alt="${d.name}">
+    <div class="order-row-body">
+      <div class="order-row-name">${d.name}</div>
+      <div class="order-row-price">${fmt(d.price)}</div>
+    </div>
+    <div class="qty-control">
+      <button class="qty-btn" data-action="dec" data-id="${d.id}" aria-label="Remove one ${d.name}">−</button>
+      <span class="qty-val" data-qty="${d.id}">${qty}</span>
+      <button class="qty-btn" data-action="inc" data-id="${d.id}" aria-label="Add one ${d.name}">+</button>
+    </div>
+  </div>`;
+}
+const orderList = document.getElementById('orderList');
+function renderOrderList(cat){
+  const list = cat === 'all' ? DISHES : DISHES.filter(d => d.cat === cat);
+  orderList.innerHTML = list.map(orderRow).join('');
+  orderList.querySelectorAll('.qty-btn').forEach(btn => btn.addEventListener('click', () => {
+    changeQty(btn.dataset.id, btn.dataset.action === 'inc' ? 1 : -1);
+  }));
+}
+renderOrderList('all');
+document.querySelectorAll('.order-tab').forEach(tab => tab.addEventListener('click', () => {
+  document.querySelectorAll('.order-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  renderOrderList(tab.dataset.cat);
+}));
+
+/* ================= CART LOGIC ================= */
+function addToCart(id, pulse){
+  cart[id] = (cart[id] || 0) + 1;
+  syncCartUI();
+  if (pulse) {
+    const pill = document.getElementById('cartPill');
+    pill.classList.remove('is-pulse'); void pill.offsetWidth; pill.classList.add('is-pulse');
+    const d = DISHES.find(x=>x.id===id);
+    showToast(`${d.name} added to your order`);
+  }
+}
+function changeQty(id, delta){
+  cart[id] = (cart[id] || 0) + delta;
+  if (cart[id] <= 0) delete cart[id];
+  syncCartUI();
+}
+function cartWhatsAppLink(){
+  const entries = Object.entries(cart);
+  let msg = 'Hi Hawks! I\'d like to order:%0A';
+  let subtotal = 0;
+  entries.forEach(([id,qty]) => {
+    const d = DISHES.find(x=>x.id===id);
+    subtotal += d.price * qty;
+    msg += `- ${qty}x ${d.name} (${fmt(d.price*qty)})%0A`;
+  });
+  msg += `%0ASubtotal: ${fmt(subtotal)} + Rs. 150 delivery`;
+  return `https://wa.me/923001234567?text=${msg}`;
+}
+function syncCartUI(){
+  document.querySelectorAll('[data-qty]').forEach(el => { el.textContent = cart[el.dataset.qty] || 0; });
+
+  const entries = Object.entries(cart);
+  const count = entries.reduce((s,[,q]) => s+q, 0);
+  const pill = document.getElementById('cartPill');
+  pill.classList.toggle('is-visible', count > 0);
+  document.getElementById('cartPillCount').textContent = count;
+
+  const cartItems = document.getElementById('cartItems');
+  const cartTotals = document.getElementById('cartTotals');
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  const waOrderBtn = document.getElementById('waOrderBtn');
+
+  if (count === 0){
+    cartItems.innerHTML = '<div class="cart-empty">Your cart is empty — add a dish to get started.</div>';
+    cartTotals.style.display = 'none';
+    checkoutBtn.disabled = true;
+    waOrderBtn.href = 'https://wa.me/923001234567?text=Hi%20Hawks!%20I%27d%20like%20to%20place%20an%20order.';
+    document.getElementById('orderForm').classList.remove('is-open');
+    return;
+  }
+
+  let subtotal = 0;
+  cartItems.innerHTML = entries.map(([id,qty]) => {
+    const d = DISHES.find(x=>x.id===id);
+    const lineTotal = d.price * qty;
+    subtotal += lineTotal;
+    return `<div class="cart-line"><span class="cl-name"><b>${qty}×</b>${d.name}</span><span class="cl-price">${fmt(lineTotal)}</span></div>`;
+  }).join('');
+
+  cartTotals.style.display = 'block';
+  const delivery = 150;
+  document.getElementById('cartSubtotal').textContent = fmt(subtotal);
+  document.getElementById('cartDelivery').textContent = fmt(delivery);
+  document.getElementById('cartGrand').textContent = fmt(subtotal + delivery);
+  checkoutBtn.disabled = false;
+  waOrderBtn.href = cartWhatsAppLink();
+}
+
+document.getElementById('checkoutBtn').addEventListener('click', () => {
+  document.getElementById('orderForm').classList.add('is-open');
+  document.getElementById('ofName').focus();
+});
+
+document.getElementById('orderForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  showToast('Order placed! We\u2019ll call to confirm shortly.');
+  cart = {};
+  syncCartUI();
+  e.target.reset();
+  e.target.classList.remove('is-open');
+});
+
+document.getElementById('cartPill').addEventListener('click', () => {
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+});
+
+syncCartUI();
+</script>
+</body>
+</html>
